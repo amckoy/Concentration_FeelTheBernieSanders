@@ -52,7 +52,7 @@ public class Concentration {
 		System.out.print("Please choose the second tile [x y]: ");
 		int x2 = sc.nextInt();
 		int y2 = sc.nextInt();
-		if (x2 >= len || y2 >= len || _board[x2][y2].isFaceUp()) {
+		if (x2 >= len || y2 >= len) {
 		    throw new Exception();
 		} // Verifcation.
 		System.out.println();
@@ -67,7 +67,9 @@ public class Concentration {
 		    display(_board);
 		    System.out.println("Booyah!");
 		} else { // If not equal.
-		    System.out.println(_board[x2][y2] + "\t: Close, but no cigar.");
+		    display(_board);
+		    System.out.println("Close, but no cigar.");
+		    System.out.println();
 		    _board[x1][y1].flip(); //
 		    _board[x2][y2].flip(); //
 		    display(_board);
