@@ -1,7 +1,7 @@
-/* Team Feel the Bernie Sanders - Adam McKoy and Zicheng Zhen
+/* Team Feel the Bernie Sanders - Nick Ng & Zicheng Zhen
    APCS1 pd10
-   HW36 -- Some Folks Call It a Memory
-   2015-11-23 */
+   HW36 -- Some Folks Call It a Memory [Revised]
+   2015-11-24 */
 
 import java.util.*;
 		
@@ -40,6 +40,7 @@ public class Concentration {
 	while (countFaceUp() < numTiles) {
 	    try {
 		Scanner sc = new Scanner(System.in);
+		sc.reset();
 		System.out.print("Please choose the first tile [x y]: ");
 		int x1 = sc.nextInt();
 		int y1 = sc.nextInt();
@@ -53,6 +54,8 @@ public class Concentration {
 		int x2 = sc.nextInt();
 		int y2 = sc.nextInt();
 		if (x2 >= len || y2 >= len) {
+		    _board[x1][y1].flip();
+		    display(_board);
 		    throw new Exception();
 		} // Verifcation.
 		System.out.println();
